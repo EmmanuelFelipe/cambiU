@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd73055e-f826-4e49-9179-ed4b362e8f96" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/unibh/sdm/cambiu/backendmoeda/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/unibh/sdm/cambiu/backendmoeda/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/unibh/sdm/cambiu/backendmoeda/entidades/Moeda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/unibh/sdm/cambiu/backendmoeda/entidades/Moeda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/unibh/sdm/cambiu/backendmoeda/negocio/MoedaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/unibh/sdm/cambiu/backendmoeda/negocio/MoedaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/unibh/sdm/cambiu/backendmoeda/persistencia/MoedaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/unibh/sdm/cambiu/backendmoeda/persistencia/MoedaRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -85,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687549071715</updated>
-      <workItem from="1687549072797" duration="10037000" />
+      <workItem from="1687549072797" duration="21764000" />
     </task>
     <servers />
   </component>
