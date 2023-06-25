@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.unibh.sdm.backend_cliente.entidades.Cliente;
-import br.unibh.sdm.backend_cliente.negocio.ClienteService;
+import br.unibh.sdm.cambiu.backendcliente.entidades.Cliente;
+import br.unibh.sdm.cambiu.backendcliente.negocio.ClienteService;
 
 @RestController
 @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, path = "cliente")
@@ -30,7 +30,7 @@ public class ClienteController {
         this.clienteService=clienteService;
     }
 
-    @GetMapping(value = "")
+    @GetMapping(value = "/lista")
     public List<Cliente> getClientes(){
         return clienteService.getClientes();
     }

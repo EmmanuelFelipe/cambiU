@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import br.unibh.sdm.backend_cliente.entidades.Cliente;
+import br.unibh.sdm.cambiu.backendcliente.entidades.Cliente;
 
 public interface ClienteRepository extends CrudRepository<Cliente, Long> {
 

@@ -10,8 +10,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import br.unibh.sdm.backend_cliente.entidades.Cliente;
-import br.unibh.sdm.backend_cliente.persistencia.ClienteRepository;
+import br.unibh.sdm.cambiu.backendcliente.entidades.Cliente;
+import br.unibh.sdm.cambiu.backendcliente.persistencia.ClienteRepository;
 
 
 @Service
