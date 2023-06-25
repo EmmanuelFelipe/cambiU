@@ -15,7 +15,7 @@ public class OpenApiConfig {
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
-                .servers(List.of(new Server().url("http://localhost:8080/api-docs")))
+                .servers(List.of(new Server().url("http://localhost:8080/moeda-api")))
                 .info(new Info()
                         .title("API Documentation")
                         .version("1.0")
