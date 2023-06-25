@@ -1,0 +1,51 @@
+name: Build and Push imagem Moeda para AWS
+
+on:
+    workflow_dispatch:
+
+jobs:
+  build:
+    permissions:
+      id-token: write
+      contents: read
+      
+    name: Image Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Create ECR repo if missing
+        uses: byu-oit/github-action-create-ecr-repo-if-missing@v1
+        with:
+          DOCKER_REPO_NAME: "backend-moeda"
+
+      - name: Build and Push Image to AWS
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ACCESSKEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          SECRETKEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          cd Docker/backend-moeda
+          ./secrets.sh
+          docker build \
+          --tag $ECR_REGISTRY/backend-moeda:latest \
+          --build-arg JAR_FILE=backend-moeda-0.0.1-SNAPSHOT.jar . \
+          docker push $ECR_REGISTRY/backend-moeda:latest
+      - name: Upload Dockerfile
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: |
+           ./Docker/backend-moeda/Dockerfile
