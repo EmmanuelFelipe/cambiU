@@ -34,15 +34,15 @@ jobs:
       - name: Build and Push Image to AWS
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ACCESSKEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          SECRETKEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          ACCESSKEY: ${{ vars.AWS_ACCESS_KEY_ID }}
+          SECRETKEY: ${{ vars.AWS_SECRET_ACCESS_KEY }}
         run: |
           cd Docker/backend-moeda
           ./secrets.sh
-          docker build \
-          --tag $ECR_REGISTRY/backend-moeda:latest \
-          --build-arg JAR_FILE=backend-moeda-0.0.1-SNAPSHOT.jar . \
-          docker push $ECR_REGISTRY/backend-moeda:latest
+          docker build . \
+          --build-arg JAR_FILE=backend-moeda-0.0.1-SNAPSHOT.jar \
+          --tag $ECR_REGISTRY/backend-moeda:latest-actions
+          docker push $ECR_REGISTRY/backend-moeda:latest-actions
       - name: Upload Dockerfile
         uses: actions/upload-artifact@v3
         with:
